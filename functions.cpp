@@ -10,26 +10,11 @@ using namespace std;
 
 
 /*
- * Sum of the letter in ascii to sort the palindromes.
- * param: a word
- */
-int wordScore(const string aWord)
-{
-    int wordScore = 0;
-
-    for (int i=0; i < aWord.length(); i++)
-    {
-        wordScore += aWord[i];
-    }
-
-}
-
-/*
  * Inserts a new element at the top of a list (stack), above its current top element.
  * param: a list
  * param: an element
  */
-/* void push(List* aList, Element* anElement)
+void push(List* aList, Element* anElement)
 {
     if(aList->first == nullptr)
         aList->first = anElement;
@@ -39,7 +24,7 @@ int wordScore(const string aWord)
         aList->first = anElement;
     }
     aList->size++;
-} */
+}
 
 
 /*
@@ -61,13 +46,35 @@ void pop(List * aList)
 
 /*
  * A given list is extended by inserting a new element before the element with
- * an equal or greater value. This effectively increases the list size by one.
+ * an equal or greater value. We sort the palindromes by alphebetical order.
+ * This effectively increases the list size by one.
  * param: a list
  * parma: an element
  */
-/* void insert(List * aList, Element* anElement)
-{
-    if(aList->first == nullptr || anElement->value <= aList->first->value) // liste vide placement en premier + premier > element
+ void insert(List * aList, Element* elemt)
+{/*
+     int testInt=0;
+     bool placed = false;
+
+     Element * elt;
+     for (elt = aList->first; elt != nullptr && !placed; elt = elt->next)
+         for (int i=0; i < elemt->aPalindrome.length(); i++)
+         {
+             if(elt->aPalindrome[i] > elemt->aPalindrome[i]){
+                cout << elt->aPalindrome << " AVANT " << elemt->aPalindrome << '\n';
+
+             }
+
+             else if(elemt->aPalindrome[i] < elt->aPalindrome[i])
+                 break;
+         }
+     if(!placed && elt != nullptr)
+         elt = elemt;
+
+      aList->size++;
+
+
+    if(aList->first == nullptr || anElement->aPalindrome <= aList->first->value) //premier > element
         push(aList, anElement);
 
     else
@@ -90,9 +97,8 @@ void pop(List * aList)
                 found=true;
             }
         }
-        aList->size++; // incrémentation de la taille comme on ajoute une valeur à la liste
-    }
-} */
+    }*/
+}
 
 
 /*
@@ -101,13 +107,14 @@ void pop(List * aList)
  */
 void printListOfPalindromes(const List* aList)
 {
+    cout << '\n' << " List of palindromes : " << '\n';
+
     Element * elt;
     for(elt = aList->first; elt != nullptr; elt = elt->next)
-       cout << elt << '\n';
+       cout << ' ' << elt->aPalindrome << '\n';
 
-    cout << '\n' << " List size : " << aList->size  << '\n';
+    cout << '\n' << " List size : " << aList->size  << "\n\n";
 }
-
 
 /*
  * Delete a list. Free the memory occupied by each element
@@ -139,7 +146,7 @@ void putAPalindrome(List * aList, const string aWord)
 {
     Element* elt = new Element;
     elt->aPalindrome = aWord;
-    insert(aList,elt);
+    push(aList,elt);
 }
 
 

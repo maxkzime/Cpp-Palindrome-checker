@@ -27,11 +27,12 @@ void pop(List * aList);
 
 /*
  * A given list is extended by inserting a new element before the element with
- * an equal or greater value. This effectively increases the list size by one.
+ * an equal or greater value. We sort the palindromes by alphebetical order.
+ * This effectively increases the list size by one.
  * param: a list
  * parma: an element
  */
-void insert(List * aList, Element* anElement);
+ void insert(List * aList, Element* elemt);
 
 /*
  * Print the list of saved palindromes
