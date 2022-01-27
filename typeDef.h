@@ -5,6 +5,10 @@
 #ifndef TYPEDEF_H
 #define TYPEDEF_H
 
+#include <iostream> 
+#include <string>
+using namespace std;
+
 /*
  * Element of a list
  */

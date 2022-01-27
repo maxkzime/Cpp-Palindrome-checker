@@ -15,7 +15,13 @@ using namespace std;
  */
 int wordScore(const string aWord)
 {
-    
+    int wordScore = 0;
+
+    for (int i=0; i < aWord.length(); i++)
+    {
+        wordScore += aWord[i];
+    }
+
 }
 
 /*
@@ -23,7 +29,7 @@ int wordScore(const string aWord)
  * param: a list
  * param: an element
  */
-void push(List* aList, Element* anElement)
+/* void push(List* aList, Element* anElement)
 {
     if(aList->first == nullptr)
         aList->first = anElement;
@@ -33,7 +39,7 @@ void push(List* aList, Element* anElement)
         aList->first = anElement;
     }
     aList->size++;
-}
+} */
 
 
 /*
@@ -59,10 +65,8 @@ void pop(List * aList)
  * param: a list
  * parma: an element
  */
-void insert(List * aList, int wordScore)
+/* void insert(List * aList, Element* anElement)
 {
-
-    
     if(aList->first == nullptr || anElement->value <= aList->first->value) // liste vide placement en premier + premier > element
         push(aList, anElement);
 
@@ -88,7 +92,7 @@ void insert(List * aList, int wordScore)
         }
         aList->size++; // incrémentation de la taille comme on ajoute une valeur à la liste
     }
-}
+} */
 
 
 /*
@@ -135,7 +139,7 @@ void putAPalindrome(List * aList, const string aWord)
 {
     Element* elt = new Element;
     elt->aPalindrome = aWord;
-    push(aList,elt);
+    insert(aList,elt);
 }
 
 

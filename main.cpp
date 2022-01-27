@@ -10,10 +10,19 @@ using namespace std;
 
 int main()
 {
+    int testInt=0; string test = "test";
+    for (int i=0; i < test.length(); i++)
+    {
+        testInt += test[i];
+        cout << testInt << '\n';
+    }
+
     List* aList = new List;
-    const int SIZE = 5;
     bool isPalindrome = false;
-    string aWord, tab[SIZE];
+    string aWord;
+
+
+    cout << "Enter the word : " << '\n';
     getline(cin,aWord);
     
     for(int i=0; i < aWord.length(); i++)
@@ -24,11 +33,13 @@ int main()
 
     if(isPalindrome){
          cout << "Is palindrome : " << aWord << '\n';
-         if(isValid(aList,aWord))
-            
+         if(isValid(aList,aWord)){}
+         else{putAPalindrome(aList,aWord);}
     }
     else
         cout << "Is not palindrome : " << aWord << '\n';
+
+    printListOfPalindromes(aList);
 
     return 0;
 }
