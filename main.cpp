@@ -11,7 +11,8 @@ using namespace std;
 int main()
 {
     List* aList = new List;
-    bool isPalindrome = false; char stop='N';
+    bool isPalindrome = false; 
+    char stop='N';
     string aWord;
 
     while(stop=='N'){
