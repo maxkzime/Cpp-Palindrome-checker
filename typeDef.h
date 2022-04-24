@@ -5,21 +5,21 @@
 #ifndef TYPEDEF_H
 #define TYPEDEF_H
 
-#include <iostream> 
 #include <string>
-using namespace std;
+#include <iostream>
+#include <fstream>
 
 /*
- * Element of a list
+ * Custom element of a custom list
  */
 struct Element
 {
-    string aPalindrome;
+    std::string aPalindrome;
     Element * next = nullptr;
 };
 
 /*
- * Definition of a list
+ * Definition of a custom list
  */
 struct List
 {

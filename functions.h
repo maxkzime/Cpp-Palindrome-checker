@@ -6,21 +6,18 @@
 #define FUNCTIONS_H
 
 #include "typeDef.h"
-#include <iostream> 
-#include <string>
-using namespace std;
-
 
 /*
- * Inserts a new element at the top of a list (stack), above its current top element.
+ * Inserts a new element at the top of a custom list (stack),
+ * above its current top element.
  * param: a list
  * param: an element
  */
 void push(List* aList, Element* anElement);
 
 /*
- * Removes the element on top of a list (stack), effectively reducing its size
- * by one.
+ * Removes the element on top of a custom list (stack),
+ * effectively reducing its size by one.
  * param: a list
  */
 void pop(List * aList);
@@ -30,27 +27,27 @@ void pop(List * aList);
  * an equal or greater value. We sort the palindromes by alphebetical order.
  * This effectively increases the list size by one.
  * param: a list
- * parma: an element
+ * param: an element
  */
  void insert(List * aList, Element* elemt);
 
-/*
- * Print the list of saved palindromes
- * param: a list (list)
- */
+ /*
+  * Print the values of a custom list (list all the saved palindromes)
+  * param: a custom list
+  */
 void printListOfPalindromes(const List* aList);
 
 /*
- * Delete a list. Free the memory occupied by each element
+ * Delete a custom list. Free the memory occupied by each element
  */
 void deleteList(List * aList);
 
 /*
- * Put a palindrome on the stack.
+ * Put a palindrome on the custom stack.
  * param: a list (stack)
  * param: a word
  */
-void putAPalindrome(List * aList, const string aWord);
+void putAPalindrome(List * aList, const std::string aWord);
 
 /*
  * Check if a word is already in the stack
@@ -59,8 +56,24 @@ void putAPalindrome(List * aList, const string aWord);
  * return: true if the word is already in the stack
  * var: valid boolean
  */
-bool isValid(const List * aList, const string aWord);
+bool isAlreadySaved(const List * aList, const std::string aWord);
 
+/*
+ * Test if a word is a palindrome.
+ */
+bool isPalindrome(const std::string aWord);
+
+/*
+ * Test all the words in a file, if they are palindromes, we print them.
+ */
+void testOnDict();
+
+/*
+ * Test an input from the user, if it's a palindromes,
+ * we print it and add it in a custom list if it's not already in it,
+ * at the end of the program, we print the custom list.
+ */
+void testOnWord();
 
 
 #endif // FUNCTIONS_H

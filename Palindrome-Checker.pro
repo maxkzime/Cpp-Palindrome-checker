@@ -7,11 +7,12 @@ SOURCES += \
         functions.cpp \
         main.cpp
 
-DISTFILES += \
-    .gitattributes \
-    .gitignore \
-    README.md
-
 HEADERS += \
     functions.h \
     typeDef.h
+
+
+DISTFILES += \
+    .gitattributes \
+    .gitignore \
+     README.md
